@@ -1,0 +1,29 @@
+(use-package evil-leader
+  :ensure t
+  :defer t
+  :init
+  (global-evil-leader-mode)
+  )
+
+(use-package evil
+  :ensure t
+  :defer t
+  :init
+  (evil-mode 1)
+  )
+
+(use-package evil-escape
+  :ensure t
+  :defer t
+  :init
+  (evil-escape-mode)
+  ;; (setq-default evil-escape-key-sequence "ff")
+  (setq-default evil-escape-delay 0.3)
+  )
+
+(provide 'config-evil)
+
+
+
+
+
