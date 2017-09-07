@@ -1,0 +1,107 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Thu Sep  7 21:05:43 2017
+;; Desktop file format version 206
+;; Emacs version 24.5.1
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (22961 17447 512000 0) (desktop . "206") "e66@E66-PC" nil nil ((((font-backend uniscribe gdi) (font . "-outline-Consolas-normal-normal-normal-mono-19-*-*-*-c-*-iso10646-1") (border-width . 2) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (foreground-color . "#DCDCCC") (background-color . "#3F3F3F") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 10) (right-fringe . 10) (alpha) (menu-bar-lines . 1) (tool-bar-lines . 0) (title) (fullscreen) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (horizontal-scroll-bars . t) (display-type . color) (background-mode . dark) (cursor-color . "#FFFFEF") (environment) (frameset--id . "BE74-DF58-D0B4-93DE") (frameset--mini t . t) (modeline . t) (minibuffer . t) (unsplittable) (icon-name) (display . "w32") (explicit-name) (tool-bar-position . top) (visibility . t) (height . 27) (width . 107) (left . 207) (top . 44)) ((min-height . 8) (min-width . 20) (min-height-ignore . 5) (min-width-ignore . 8) (min-height-safe . 2) (min-width-safe . 4) (min-pixel-height . 176) (min-pixel-width . 200) (min-pixel-height-ignore . 110) (min-pixel-width-ignore . 80) (min-pixel-height-safe . 44) (min-pixel-width-safe . 40)) hc (pixel-width . 1095) (pixel-height . 572) (total-width . 110) (total-height . 26) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 520) (pixel-height . 572) (total-width . 52) (total-height . 26) (normal-height . 1.0) (normal-width . 0.47838086476540936) (buffer ".emacs.d" (selected) (hscroll . 0) (fringes 10 10 nil) (margins 2) (scroll-bars 0 0 t nil) (vscroll . 0) (dedicated) (point . 180) (start . 1))) (vc (last . t) (pixel-width . 575) (pixel-height . 572) (total-width . 58) (total-height . 26) (normal-height . 1.0) (normal-width . 0.5216191352345907) (combination-limit) (leaf (pixel-width . 575) (pixel-height . 286) (total-width . 58) (total-height . 13) (normal-height . 0.5) (normal-width . 1.0) (buffer "*magit: .emacs.d" (selected) (hscroll . 0) (fringes 10 10 nil) (margins nil) (scroll-bars 0 0 t nil) (vscroll . 0) (dedicated) (point . 161) (start . 1))) (leaf (last . t) (pixel-width . 575) (pixel-height . 286) (total-width . 58) (total-height . 13) (normal-height . 0.5) (normal-width . 1.0) (buffer "*helm-mode-magit-stage-file*" (selected) (hscroll . 0) (fringes 10 10 nil) (margins 3) (scroll-bars 0 0 t nil) (vscroll . 0) (dedicated) (point . 211) (start . 211))))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '("desk"))
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history nil)
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  nil
+  ".emacs.d"
+  'dired-mode
+  '(override-global-mode linum-mode yas-minor-mode global-auto-revert-mode projectile-mode helm-mode helm-gtags-mode)
+  180
+  '(634 nil)
+  t
+  '("d:/program files/emacs/.emacs.d/")
+  nil)
+
+(desktop-create-buffer 206
+  "d:/program files/emacs/.emacs.d/ac-comphist.dat"
+  "ac-comphist.dat"
+  'fundamental-mode
+  '(override-global-mode linum-mode yas-minor-mode global-auto-revert-mode projectile-mode helm-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-dos)))
+
+(desktop-create-buffer 206
+  nil
+  "modules"
+  'dired-mode
+  '(override-global-mode linum-mode yas-minor-mode global-auto-revert-mode projectile-mode helm-mode helm-gtags-mode)
+  180
+  '(nil nil)
+  t
+  '("d:/program files/emacs/.emacs.d/modules/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "emacs"
+  'dired-mode
+  '(override-global-mode linum-mode yas-minor-mode global-auto-revert-mode projectile-mode helm-mode helm-gtags-mode)
+  366
+  '(nil nil)
+  t
+  '("d:/program files/emacs/")
+  nil)
+
+(desktop-create-buffer 206
+  "d:/program files/emacs/.emacs.d/modules/config-edit.el"
+  "config-edit.el"
+  'emacs-lisp-mode
+  '(override-global-mode linum-mode untabify-mode aggressive-indent-mode yas-minor-mode global-auto-revert-mode auto-complete-mode projectile-mode helm-mode smartparens-mode)
+  5814
+  '(3968 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos)))
+
+(desktop-create-buffer 206
+  "d:/program files/emacs/.emacs.d/init.el"
+  "init.el"
+  'emacs-lisp-mode
+  '(override-global-mode linum-mode untabify-mode aggressive-indent-mode yas-minor-mode global-auto-revert-mode auto-complete-mode projectile-mode helm-mode smartparens-mode)
+  1146
+  '(840 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos)))
+
+(desktop-create-buffer 206
+  "d:/program files/emacs/.emacs.d/.emacs.desktop"
+  ".emacs.desktop"
+  'emacs-lisp-mode
+  '(override-global-mode linum-mode untabify-mode aggressive-indent-mode yas-minor-mode global-auto-revert-mode auto-complete-mode projectile-mode helm-mode smartparens-mode)
+  255
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . emacs-mule-dos)))
+
+(desktop-create-buffer 206
+  nil
+  "elpa"
+  'dired-mode
+  '(override-global-mode linum-mode yas-minor-mode global-auto-revert-mode projectile-mode helm-mode helm-gtags-mode)
+  301
+  '(nil nil)
+  t
+  '("d:/program files/emacs/.emacs.d/elpa/")
+  nil)
+

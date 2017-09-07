@@ -1,0 +1,90 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("init.el"
+ (filename . "d:/program files/emacs/.emacs.d/init.el")
+ (front-context-string . "\n(add-to-list 'l")
+ (rear-context-string . ")\n\n\n;;multi-term")
+ (position . 948))
+("org-refile-last-stored"
+ (filename . "d:/Program Files/emacs/exercise.org")
+ (front-context-string . "** \n\n\n\n\n\n\n豫章故郡， ")
+ (rear-context-string . "子今何在？ 槛外长江空自流。 \n")
+ (position . 1169))
+("main.c"
+ (filename . "c:/Users/Administrator/Desktop/联网温控器月动/HLA2027DB-L-(20-001-01177) ---郭美玲V1.0_新/Src/main.c")
+ (front-context-string . "		SetTempH=Lcd_C")
+ (rear-context-string . "tory_Set,1,0);\n	")
+ (position . 43914))
+("4"
+ (filename . "c:/Users/Administrator/Desktop/联网温控器月动/HLA2027DB-L-(20-001-01177) ---郭美玲V1.0/Src/main.c")
+ (front-context-string . ";\n	Timer1++;\n	/*")
+ (rear-context-string . "	\n	T00CR1_IF = 0")
+ (position . 29982))
+("HLT1"
+ (filename . "c:/Users/Administrator/Desktop/联网温控器月动/HLA2027DB-L-(20-001-01177) ---郭美玲V1.0/Src/main.c")
+ (front-context-string . "			 _DisBufer9.B")
+ (rear-context-string . "\n#define	 ValX		")
+ (position . 9487))
+("now"
+ (filename . "c:/Users/e66/Desktop/触摸灯条控制器_PT20A_done_1_27_23/TK5KN_V1.asm")
+ (front-context-string . "cf	\n		bsf	RAMBK\n")
+ (rear-context-string . "-------------\n	b")
+ (position . 11858))
+("PWM_up"
+ (filename . "c:/Users/e66/Desktop/触摸灯条控制器/TK5KN_V1.asm")
+ (front-context-string . "bsf	DELAY_FLAG	;")
+ (rear-context-string . "Pwm_Duty_Level\n	")
+ (position . 19798))
+("First_Tk"
+ (filename . "c:/Users/e66/Desktop/触摸灯条控制器/TK5KN_V1.asm")
+ (front-context-string . "_Check_Tk3:	\n	mo")
+ (rear-context-string . "一轮检测哪个按键按下\nFirst")
+ (position . 16103))
+("change_flag"
+ (filename . "c:/Users/e66/Desktop/触摸灯条控制器/TK5KN_V1.asm")
+ (front-context-string . "	;如果第二次无键按下，则进行灯")
+ (rear-context-string . "	bsf	CHANGE_FLAG")
+ (position . 17843))
+("Bar_Select_init"
+ (filename . "c:/Users/e66/Desktop/触摸灯条控制器/TK5KN_V1.asm")
+ (front-context-string . "----------------")
+ (rear-context-string . "\n;;; -----------")
+ (position . 13306))
+("Adjust_The_Light"
+ (filename . "c:/Users/e66/Desktop/触摸灯条控制器/TK5KN_V1.asm")
+ (front-context-string . "	Sec_Tk_Check			")
+ (rear-context-string . "		;第一轮按键检测\n	call")
+ (position . 12958))
+("3"
+ (filename . "c:/Users/e66/Desktop/触摸灯条控制器/TK5KN_V1.asm")
+ (front-context-string . "	;; bcf	RAMBK\n	;")
+ (rear-context-string . "r_Light_Adjust:\n")
+ (position . 18813))
+("2"
+ (filename . "c:/Users/Administrator/Desktop/联网温控器月动/HLA2027DB-L-(20-001-01177) ---郭美玲V1.0_新/Src/state_process.c")
+ (front-context-string . ") { /* 4对应2度 */\n")
+ (rear-context-string . "emp_B < Temp + 6")
+ (position . 10918))
+("1"
+ (filename . "c:/Users/lenovo/Desktop/Lwip_7_11/Treeos_Lwip/TreeOS/user/src/netconf.c")
+ (front-context-string . "		\n\n#ifdef USE_L")
+ (rear-context-string . ")(IPaddress);\n		")
+ (position . 7461))
+("usr_code_line"
+ (filename . "c:/Users/e66/Desktop/触摸灯条控制器/TK5KN_V1.asm")
+ (front-context-string . "Light:\n	btfss	SW")
+ (rear-context-string . "----\nAdjust_The_")
+ (position . 12850))
+("Pwm_Down"
+ (filename . "c:/Users/e66/Desktop/触摸灯条控制器/TK5KN_V1.asm")
+ (front-context-string . "Down:\n	movlw   0")
+ (rear-context-string . "WM1D\n	\n	ret\nPwm_")
+ (position . 17762))
+("call Pwm_Duty"
+ (filename . "c:/Users/e66/Desktop/触摸灯条控制器/TK5KN_V1.asm")
+ (front-context-string . "\n	\n	\n	\n\n\n;; ;;; ")
+ (rear-context-string . "ty_Level\n	movwf	")
+ (position . 16870))
+)
