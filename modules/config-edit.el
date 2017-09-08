@@ -34,9 +34,6 @@
   )
 (global-set-key [remap comment-or-uncomment-region] 'my-comment-or-uncomment-region)
 
-
-(desktop-save-mode 1)
-
 ;;添加Yasnippet
 (use-package yasnippet
   :defer t
@@ -58,16 +55,16 @@
 (setq dired-recursive-copies (quote always)) ; “always” means no asking
 (setq dired-recursive-deletes (quote top)) ; “top” means ask once
 (use-package dired-hacks-utils
-  ;; :ensure t
+  :ensure t
   )
 ;;dired-ranger
 (use-package dired-ranger
-  ;; :ensure t
+  :ensure t
   :defer t
   :init
-  (define-key dired-mode-map (kbd "W") 'dired-ranger-copy)
-  (define-key dired-mode-map (kbd "X") 'dired-ranger-move) 
-  (define-key dired-mode-map (kbd "Y") 'dired-ranger-paste) 
+  (define-key dired-mode-map (kbd "z") 'dired-ranger-copy)
+  (define-key dired-mode-map (kbd "W") 'dired-ranger-move) 
+  (define-key dired-mode-map (kbd "Z") 'dired-ranger-paste) 
   )
 ;;multi-term
 (use-package multi-term
