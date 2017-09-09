@@ -71,6 +71,8 @@
   (add-hook 'verilog-mode-hook #'smartparens-mode)
   (add-hook 'emacs-lisp-mode-hook #'smartparens-mode)
   (add-hook 'matlab-mode-hook #'smartparens-mode)
+  (add-hook 'org-mode-hook #'smartparens-mode)
+
   )
 
 ;;UTF8
@@ -162,8 +164,8 @@
 
 (add-to-list 'load-path "~/.emacs.d/elpa/goto-chg-20131228.659")
 (require 'goto-chg)
-(global-set-key (kbd"C-c .") 'goto-last-change)
-(global-set-key (kbd"C-c /") 'goto-last-change-reverse)
+(global-set-key (kbd"C-c w") 'goto-last-change)
+(global-set-key (kbd"C-c e") 'goto-last-change-reverse)
 
 (add-to-list 'load-path "~/.emacs.d/elpa/customize")
 (require 'auto-save)
@@ -178,6 +180,16 @@
   ;; (winner-mode 1)
   ;; (global-set-key (kbd "C-x 4 u") 'winner-undo)
   ;; (global-set-key (kbd "C-x 4 r") 'winner-redo)
+  )
+
+(use-package highlight-indent-guides
+  :ensure t
+  :defer t
+  :init
+  (add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
+  (setq highlight-indent-guides-method 'character) ;column fill character
+  (setq highlight-indent-guides-character ?\|)
+  ;; (setq highlight-indent-guides-character ':)
   )
 
 
