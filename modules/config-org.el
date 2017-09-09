@@ -22,6 +22,10 @@
 (setq org-todo-keywords
       '((sequence "TODO" "FEEDBACK" "VERIFY" "|" "DONE" "DELEGATED")))
 
+;;UTF8
+(setq default-buffer-file-coding-system 'chinese-gbk)
+(prefer-coding-system 'chinese-gbk)
+
 (provide 'config-org)
 
 
