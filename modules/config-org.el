@@ -23,8 +23,8 @@
       '((sequence "TODO" "FEEDBACK" "VERIFY" "|" "DONE" "DELEGATED")))
 
 ;;UTF8
-(setq default-buffer-file-coding-system 'chinese-gbk)
-(prefer-coding-system 'chinese-gbk)
+(setq default-buffer-file-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
 
 (provide 'config-org)
 
