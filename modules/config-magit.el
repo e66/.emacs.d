@@ -1,10 +1,11 @@
 ;;调用git bash 实现shell功能
-(setq explicit-shell-file-name  
-      "D:/Program Files/Git/bin/sh.exe")  
-(setq shell-file-name explicit-shell-file-name)  
+;; (setq explicit-shell-file-name  
+;; "D:/Program Files/Git/bin/sh.exe")  
+;; (setq shell-file-name explicit-shell-file-name)  
 (add-to-list 'exec-path "D:/Program Files/Git/bin")
-
+(add-to-list 'exec-path "D:/Program Files/UnxUtils/usr/local/wbin")
 (add-to-list 'exec-path "D:/program files/emacs/bin/find_grep_xargs")
+(add-to-list 'exec-path "D:/program files/emacs/bin/AStyle/bin")
 
 (use-package magit-popup
   :ensure t

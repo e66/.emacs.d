@@ -1,0 +1,1 @@
+(define-package "autofit-frame" "20170221.752" "Automatically resize one-window frames to fit" '((fit-frame "0")) :url "https://www.emacswiki.org/emacs/download/autofit-frame.el" :keywords '("internal" "extensions" "convenience" "local"))

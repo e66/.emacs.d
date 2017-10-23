@@ -118,48 +118,22 @@
 
     (define-key global-map [remap list-buffers] 'helm-buffers-list)
 
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    ;; PACKAGE: helm-swoop                ;;
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    ;; Locate the helm-swoop folder to your path
-    (use-package helm-swoop
-      :defer t
-      :bind (
-             ("M-i" . helm-swoop)
-             ("M-I" . helm-multi-swoop-all)
-             )
-      :config
-      ;; When doing isearch, hand the word over to helm-swoop
-      (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
-
-      ;; From helm-swoop to helm-multi-swoop-all
-      (define-key helm-swoop-map (kbd "M-i") 'helm-multi-swoop-all-from-helm-swoop)
-
-      ;; Save buffer when helm-multi-swoop-edit complete
-      (setq helm-multi-swoop-edit-save t)
-
-      ;; If this value is t, split window inside the current window
-      (setq helm-swoop-split-with-multiple-windows t)
-
-      ;; Split direcion. 'split-window-vertically or 'split-window-horizontally
-      (setq helm-swoop-split-direction 'split-window-vertically)
-
-      ;; If nil, you can slightly boost invoke speed in exchange for text color
-      (setq helm-swoop-speed-or-color t))
-
+    
     (helm-mode 1)
 
     (use-package helm-projectile
       :defer t
       :init
       (helm-projectile-on)
-      (setq projectile-completion-system 'helm)
-      (setq projectile-indexing-method 'alien))))
+      )))
 
-;; (use-package ggtags
-;; :ensure t
-;; :defer t
-;; )
+;;gtags   
+(add-to-list 'load-path "~/.emacs.d/elpa/customize")
+(autoload 'gtags-mode "gtags" "" t)
+(add-hook 'c-mode-hook
+          '(lambda ()
+             (gtags-mode 1)
+             ))
 
 (use-package helm-gtags
   :ensure t
@@ -169,7 +143,7 @@
         helm-gtags-auto-update t
         helm-gtags-use-input-at-cursor t
         helm-gtags-pulse-at-cursor t
-        helm-gtags-prefix-key "\C-cg"
+        ;; helm-gtags-prefix-key "\C-cg"
         helm-gtags-suggested-key-mapping t)
   ;; Enable helm-gtags-mode
   (add-hook 'dired-mode-hook 'helm-gtags-mode)
@@ -177,21 +151,52 @@
   (add-hook 'c-mode-hook 'helm-gtags-mode)
   (add-hook 'c++-mode-hook 'helm-gtags-mode)
   (add-hook 'asm-mode-hook 'helm-gtags-mode)
-  :init
+  (add-hook 'emacs-lisp-mode-hook 'helm-gtags-mode)
+
   (eval-after-load "helm-gtags"
     '(progn
        (define-key helm-gtags-mode-map (kbd "M-j") 'helm-gtags-select)
        (define-key helm-gtags-mode-map (kbd "M-.") 'helm-gtags-dwim)
        (define-key helm-gtags-mode-map (kbd "C-c l") 'helm-gtags-pop-stack)
        (define-key helm-gtags-mode-map (kbd "C-c j") 'helm-gtags-find-tag)
-       (define-key helm-gtags-mode-map (kbd "C-c k") 'helm-gtags-find-rtag)
-       (define-key helm-gtags-mode-map (kbd "C-c d") 'helm-gtags-find-symbol)
-       (define-key helm-gtags-mode-map (kbd "C-c a") 'helm-gtags-find-files)
+       (define-key helm-gtags-mode-map (kbd "C-c k") 'helm-gtags-find-symbol)
+       (define-key helm-gtags-mode-map (kbd "C-c ;") 'helm-gtags-find-rtag)
+       (define-key helm-gtags-mode-map (kbd "C-c f") 'helm-gtags-find-files)
        (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
        (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)))
   )
 
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; PACKAGE: helm-swoop                ;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;; Locate the helm-swoop folder to your path
+    
 
+(use-package helm-swoop
+  :ensure t
+  :defer t
+  :bind (
+         ("M-I " . helm-swoop)
+         ("M-i" . helm-multi-swoop-all)
+         )
+  :config
+  ;; When doing isearch, hand the word over to helm-swoop
+  (define-key isearch-mode-map (kbd "M-I") 'helm-swoop-from-isearch)
+
+  ;; From helm-swoop to helm-multi-swoop-all
+  (define-key helm-swoop-map (kbd "M-I") 'helm-multi-swoop-all-from-helm-swoop)
+  
+  ;; Save buffer when helm-multi-swoop-edit complete
+  (setq helm-multi-swoop-edit-save t)
+
+  ;; If this value is t, split window inside the current window
+  (setq helm-swoop-split-with-multiple-windows t)
+
+  ;; Split direcion. 'split-window-vertically or 'split-window-horizontally
+  (setq helm-swoop-split-direction 'split-window-vertically)
+
+  ;; If nil, you can slightly boost invoke speed in exchange for text color
+  (setq helm-swoop-speed-or-color t))
 
 (use-package helm-ag
   :ensure t
@@ -201,6 +206,8 @@
         )
   )
 (provide 'config-helm)
+
+
 
 
 

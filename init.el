@@ -1,7 +1,10 @@
 ;; emacs 配置 for myself and windows
 ;;设置环境变量
 (setenv"HOME" "D:/program files/emacs")
-(setenv"PATH" "D:/program files/emacs/bin;D:/program files/emacs/UnxUtils/usr/local/wbin;D:/program files/Git/bin;D:/program files/Git/usr/bin;D:/program files/emacs/bin/Gnu_global/bin;D:/program files/LLVM/bin")
+
+(setenv"ARTISTIC_STYLE_OPTIONS" "D:/program files/emacs/bin/AStyle/astylerc.opt")
+
+(setenv"PATH" "D:/program files/emacs/bin;D:/program files/emacs/UnxUtils/usr/local/wbin;D:/program files/Git/bin;D:/program files/Git/usr/bin;D:/program files/emacs/bin/Gnu_global/bin;D:/program files/LLVM/bin;D:/program files/emacs/bin/graphviz/bin;D:/program files/emacs/bin/AStyle/bin")
 (setq default-directory"~/")
 
 
@@ -23,24 +26,23 @@
 (add-to-list 'load-path "~/.emacs.d/modules")
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
 
-
 (require 'config-general)
 (require 'config-theme)
 ;; (require 'config-evil)
 (require 'config-rely)
 (require 'config-edit)
+
 (require 'config-cedet-semantic)
 (require 'config-auto-complete)
 ;; (require 'config-company)
 (require 'config-helm)
 (require 'config-c)
+(require 'config-hdl)
 (require 'config-magit)
 (require 'config-org)
-(require 'config-hdl)
 ;; (require 'config-matlab)
 
-;; (desktop-save-mode 1)
-
+(desktop-save-mode t)
 
 
 

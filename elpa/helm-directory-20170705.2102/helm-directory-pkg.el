@@ -1,0 +1,1 @@
+(define-package "helm-directory" "20170705.2102" "selecting directory before select the file" '((emacs "24.4") (helm "2.0")) :commit "aac6efeaa3679769dd3db83e107e830be7a382b5" :url "https://github.com/masasam/emacs-helm-directory")

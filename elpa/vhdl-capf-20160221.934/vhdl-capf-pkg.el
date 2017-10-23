@@ -1,0 +1,1 @@
+(define-package "vhdl-capf" "20160221.934" "Completion at point function (capf) for vhdl-mode." 'nil :url "https://github.com/sh-ow/vhdl-capf" :keywords '("convenience" "usability" "vhdl" "completion"))

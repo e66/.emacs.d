@@ -46,17 +46,31 @@
 
 ;;dired+
 ;; (use-package dired+
-  ;; :defer t
-  ;; :ensure t)
+;; :defer t
+;; :ensure t
+;; :init
+
+;; )
 
 ;; dired
 (setq dired-dwim-target t)
+
+(defun xah-dired-mode-setup ()
+  "to be run as hook for `dired-mode'."
+  (dired-hide-details-mode 1))
+(add-hook 'dired-mode-hook 'xah-dired-mode-setup)
+
+;; (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file) ; was dired-advertised-find-file
+;; (define-key dired-mode-map (kbd "^")
+;; (lambda () (interactive) (find-alternate-file "..")))  ; was dired-up-directory
 ;; allow dired to delete or copy dir
 (setq dired-recursive-copies (quote always)) ; “always” means no asking
 (setq dired-recursive-deletes (quote top)) ; “top” means ask once
+
 (use-package dired-hacks-utils
   :ensure t
   )
+
 ;;dired-ranger
 (use-package dired-ranger
   :ensure t
@@ -66,6 +80,7 @@
   (define-key dired-mode-map (kbd "W") 'dired-ranger-move) 
   (define-key dired-mode-map (kbd "Z") 'dired-ranger-paste) 
   )
+
 ;;multi-term
 (use-package multi-term
   :ensure t
@@ -158,7 +173,30 @@
 (global-set-key (kbd "M-p") 'highlight-symbol-prev)
 
 ;;开启ace-jump-mode
-(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+(use-package ace-jump-mode
+  :ensure t
+  :defer t
+  :init
+  (autoload
+    'ace-jump-mode
+    "ace-jump-mode"
+    "Emacs quick move minor mode"
+    t)
+  (autoload
+    'ace-jump-mode-pop-mark
+    "ace-jump-mode"
+    "Ace jump back:-)"
+    t)
+  (eval-after-load "ace-jump-mode"
+    '(ace-jump-mode-enable-mark-sync))
+  (define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
+  :bind (
+
+         ("C-c SPC" . ace-jump-mode)
+         
+         )
+  )
+;; (define-key global-map (kbd "C-c -") 'ace-jump-mode)
 
 ;;multiple-cursors-mode
 (global-set-key (kbd "C-c m c")'mc/edit-lines)
@@ -170,11 +208,12 @@
 
 ;;cua-mode
 (cua-selection-mode t)
+
 (setq visible-bell t)
 (setq default-fill-column 60)
 (setq frame-title-format "emacs@%b")
 
-;; 如果文件已发生更改则自动更新
+
 (global-auto-revert-mode t)
 
 ;;ivy
@@ -195,10 +234,27 @@
 
 (use-package iedit
   :ensure t
-  :defer t
+ ;; :bind (
+  ;;       ("C-;" . iedit-mode)
+    ;;     )
   )
 
 
+(use-package graphviz-dot-mode
+  :ensure t
+  )
+
+
+(use-package image-dired
+  :ensure t
+  )
+
+;; (desktop-save-mode 1)
+
 (provide 'config-edit)
+
+
+
+
 
 

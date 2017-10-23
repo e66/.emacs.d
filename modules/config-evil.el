@@ -11,6 +11,7 @@
   :defer t
   :init
   (evil-mode 1)
+  (set evil-default-state 'emacs)
   )
 
 (use-package evil-escape

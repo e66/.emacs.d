@@ -1,6 +1,4 @@
-
 (require 'cedet)
-
 (require 'semantic/ia)
 (require 'semantic/analyze)
 (require 'semantic)
@@ -20,7 +18,7 @@
 (provide 'semantic-load)
 
 (global-semanticdb-minor-mode 1)
-
+(global-semantic-idle-summary-mode 1)
 
 ;;Semantic DataBase存储位置
 (setq semanticdb-default-save-directory

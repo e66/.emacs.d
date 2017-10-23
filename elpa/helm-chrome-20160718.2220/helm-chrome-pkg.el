@@ -1,0 +1,1 @@
+(define-package "helm-chrome" "20160718.2220" "Helm interface for Chrome bookmarks" '((helm "1.5") (cl-lib "0.3") (emacs "24")) :commit "fd630ace4b4b4f33355a973743bbfe0c90ce4830" :url "https://github.com/kawabata/helm-chrome" :keywords '("tools"))
