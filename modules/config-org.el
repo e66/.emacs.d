@@ -31,6 +31,10 @@
 (setq org-todo-keywords
       '((sequence "TODO" "FEEDBACK" "VERIFY" "|" "DONE" "DELEGATED")))
 
+;;UTF8
+(setq default-buffer-file-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+
 (provide 'config-org)
 
 
