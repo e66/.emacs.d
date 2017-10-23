@@ -39,6 +39,20 @@
   (add-hook 'c-mode-common-hook 'google-make-newline-indent)
   )
 
+;;style google linux allman
+(let ((style "allman"))
+  (setq format-command (format "astyle --style=%s -S -p -F -xg -xe -n" style)))
+
+(defun format-code ()
+  "Format current buffer"
+  (interactive)
+  (let ((file (buffer-file-name)))
+    (save-excursion
+      (shell-command-to-string (format "%s %s" format-command file))
+      (message "Code formatted"))))
+
+(global-set-key [(f12)] 'format-code)
+
 (provide 'config-c)
 
 

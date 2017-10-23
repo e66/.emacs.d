@@ -4,14 +4,16 @@
 (mouse-avoidance-mode 'animate)
 ;;光标始终保持在行尾
 (setq track-eol t)
+;;删除整行
+(setq-default kill-whole-line t)
 ;;鼠标中键粘贴
 (setq mouse-yank-at-point t)
 ;;跳转到上一个buffer，或下一个buffer
 (global-set-key (kbd "C-7") 'switch-to-prev-buffer)
 (global-set-key (kbd "C-8") 'switch-to-next-buffer)
 ;;bookmark
-(global-set-key (kbd "C-c c") 'bookmark-set)
-(global-set-key (kbd "C-c v") 'bookmark-jump)
+(global-set-key (kbd "C--") 'bookmark-set)
+(global-set-key (kbd "C-+") 'bookmark-jump)
 
 
 ;; 重新设置C-x s为保存所有的缓冲区
@@ -29,8 +31,6 @@
 ;; 在有yes-or-no选项时，y代表yes，n代表n
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; 显示行号
-(global-linum-mode)
 
 ;; 结尾换行自动插入新行
 (setq next-line-add-newlines t)
@@ -71,6 +71,10 @@
   (add-hook 'verilog-mode-hook #'smartparens-mode)
   (add-hook 'emacs-lisp-mode-hook #'smartparens-mode)
   (add-hook 'matlab-mode-hook #'smartparens-mode)
+<<<<<<< HEAD
+  (add-hook 'org-mode-hook #'smartparens-mode)
+=======
+>>>>>>> bf3b749f4fa8372bbc6f0d7233bfe8e9b38a3b5f
   )
 
 
