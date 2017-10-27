@@ -42,7 +42,5 @@
 (require 'config-org)
 ;; (require 'config-matlab)
 
-(desktop-save-mode t)
-
 
 

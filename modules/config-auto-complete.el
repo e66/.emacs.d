@@ -4,13 +4,13 @@
   )
 
 
-(defun my-verilog-mode-hook ()
-  (
-   (ac-config-default)
-   (setq ac-use-quick-help nil)
-   (setq auto-start 2) ;; 输入2个字符才开始补全
-   )
-  )
+;; (defun my-verilog-mode-hook ()
+;;   (
+;;    (ac-config-default)
+;;    (setq ac-use-quick-help nil)
+;;    (setq auto-start 2) ;; 输入2个字符才开始补全
+;;    )
+;;   )
 
 
 ;; (use-package auto-complete-c-headers

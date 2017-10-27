@@ -49,7 +49,6 @@
 ;; :defer t
 ;; :ensure t
 ;; :init
-
 ;; )
 
 ;; dired
@@ -86,7 +85,6 @@
   :ensure t
   :defer t
   )
-
 ;;emacs的默认compile命令是调用make -k，我把它改成了make。你也可以把它改成其他的，比如gcc之类的.
 (setq compile-command "make")
 
@@ -167,7 +165,7 @@
         ("M-s f" . er/mark-defun)
         )
   )
- ;;highlight-symbol 再按一次取消
+;;highlight-symbol 再按一次取消
 (global-set-key (kbd "M--") 'highlight-symbol-at-point)
 (global-set-key (kbd "M-n") 'highlight-symbol-next)
 (global-set-key (kbd "M-p") 'highlight-symbol-prev)
@@ -191,9 +189,7 @@
     '(ace-jump-mode-enable-mark-sync))
   (define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
   :bind (
-
          ("C-c SPC" . ace-jump-mode)
-         
          )
   )
 ;; (define-key global-map (kbd "C-c -") 'ace-jump-mode)
@@ -212,8 +208,6 @@
 (setq visible-bell t)
 (setq default-fill-column 60)
 (setq frame-title-format "emacs@%b")
-
-
 (global-auto-revert-mode t)
 
 ;;ivy
@@ -229,14 +223,14 @@
   :ensure t
   :defer t
   :init
-  (autoload 'whitespace-mode   "whitespace" "Toggle whitespace visualization."        t)
+  (autoload 'whitespace-mode   "whitespace" "Toggle whitespace visualization." t)
   )
 
 (use-package iedit
   :ensure t
- ;; :bind (
+  ;; :bind (
   ;;       ("C-;" . iedit-mode)
-    ;;     )
+  ;;     )
   )
 
 
@@ -249,7 +243,7 @@
   :ensure t
   )
 
-;; (desktop-save-mode 1)
+(desktop-save-mode 1)
 
 (provide 'config-edit)
 

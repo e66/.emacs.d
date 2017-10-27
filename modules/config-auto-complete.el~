@@ -13,16 +13,15 @@
   )
 
 
-(use-package auto-complete-c-headers
-  :ensure t
-  :defer t
-  :init
-  (add-hook 'c-mode-hook
-            (lambda ()
-              (add-to-list 'ac-sources 'ac-source-c-headers)
-              (add-to-list 'ac-sources 'ac-source-c-header-symbols t)))
-  )
-
+;; (use-package auto-complete-c-headers
+;;   :ensure t
+;;   :defer t
+;;   :init
+;;   (add-hook 'c-mode-hook
+;;             (lambda ()
+;;               (add-to-list 'ac-sources 'ac-source-c-headers)
+;;               (add-to-list 'ac-sources 'ac-source-c-header-symbols t)))
+;;   )
 
 ;; (add-hook 'c-mode-hook
 ;;        (lambda ()
