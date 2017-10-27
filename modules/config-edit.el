@@ -34,9 +34,6 @@
   )
 (global-set-key [remap comment-or-uncomment-region] 'my-comment-or-uncomment-region)
 
-
-(desktop-save-mode 1)
-
 ;;添加Yasnippet
 (use-package yasnippet
   :defer t

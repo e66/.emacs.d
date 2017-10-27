@@ -58,8 +58,8 @@
   (interactive)    
   (w32-send-sys-command #xf120))    ; #xf120 normalimize    
 
-(emacs-maximize)    
 (global-set-key (kbd  "C-9") 'emacs-maximize)  
+;; (global-set-key (kbd  "C-\") 'emacs-maximize)  
 
 (use-package smartparens 
   :ensure t
@@ -71,12 +71,12 @@
   (add-hook 'verilog-mode-hook #'smartparens-mode)
   (add-hook 'emacs-lisp-mode-hook #'smartparens-mode)
   (add-hook 'matlab-mode-hook #'smartparens-mode)
-<<<<<<< HEAD
   (add-hook 'org-mode-hook #'smartparens-mode)
-=======
->>>>>>> bf3b749f4fa8372bbc6f0d7233bfe8e9b38a3b5f
   )
 
+;;UTF8
+(setq default-buffer-file-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
 
 ;;添加 go to char
 ;;通过这个，我们可以通过 C-t 加上指定字符向后跳，后者 C-u C-t 向前跳。比如C-t w w w w …就一直往后跳到后续的w处。
@@ -140,7 +140,7 @@
 
 ;;代码折叠展开翻转
 (global-set-key (kbd"C-0") 'hs-toggle-hiding)
-(global-set-key [f2] 'hs-hide-all)
+(global-set-key (kbd"C-'") 'hs-hide-all)
 
 (use-package sr-speedbar
   :ensure t
@@ -163,7 +163,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/elpa/goto-chg-20131228.659")
 (require 'goto-chg)
-(global-set-key (kbd"C-c q") 'goto-last-change)
+(global-set-key (kbd"C-c w") 'goto-last-change)
 (global-set-key (kbd"C-c e") 'goto-last-change-reverse)
 
 (add-to-list 'load-path "~/.emacs.d/elpa/customize")
@@ -181,7 +181,6 @@
   ;; (global-set-key (kbd "C-x 4 r") 'winner-redo)
   )
 
-
 (use-package highlight-indent-guides
   :ensure t
   :defer t
@@ -189,6 +188,7 @@
   (add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
   (setq highlight-indent-guides-method 'character) ;column fill character
   (setq highlight-indent-guides-character ?\|)
+  ;; (setq highlight-indent-guides-character ':)
   )
 
 
