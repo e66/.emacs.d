@@ -1,6 +1,6 @@
 (use-package popup
-  :defer t
   :ensure t
+  :defer t
   )
 
 
@@ -11,7 +11,6 @@
    (setq auto-start 2) ;; 输入2个字符才开始补全
    )
   )
-
 
 ;; (use-package auto-complete-c-headers
 ;;   :ensure t

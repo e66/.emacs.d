@@ -1,9 +1,9 @@
 ;;mobile org
 (setq org-mobile-directory "~/mobile-org")
-(setq org-mobile-files (list "~/pc_org/数字设计.org" "~/pc_org/面试.org" "~/pc_org/my_target.org" "~/pc_org/gtd.org" "~/agenda/gtd.org"))
-(setq org-directory "~/pc_org")
+(setq org-mobile-files (list  "~/agenda/gtd.org"))
+(setq org-directory "~/agenda")
 (setq org-agenda-files (list "~/agenda/gtd.org"))
-(setq org-mobile-inbox-for-pull "~/pc_org/inbox.org")
+(setq org-mobile-inbox-for-pull "~/agenda/inbox.org")
 (setq org-default-notes-file (concat org-directory "notes.org"))
 ;; 自己的pc
 (defcustom org-mobile-checksum-binary (or (executable-find "~/bin/GnuWin32/bin/md5sum.exe"))
@@ -35,6 +35,21 @@
 (setq calendar-latitude 40.2)
 (setq calendar-longitude 116.2)
 (setq calendar-location-name "Beijing, Changping")
+
+
+
+;; Auto-export org files to html when saved 
+;; (defun org-mode-export-hook()
+;;   "Auto export html"
+;;   (when (eq major-mode 'org-mode)
+;;     (org-export-as-html t)))
+
+;; (add-hook 'after-save-hook 'org-mode-export-hook)
+
+;;UTF8
+(setq default-buffer-file-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+
 (provide 'config-org)
 
 

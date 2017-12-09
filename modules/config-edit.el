@@ -44,13 +44,6 @@
         )
   (yas-global-mode 1))
 
-;;dired+
-;; (use-package dired+
-;; :defer t
-;; :ensure t
-;; :init
-;; )
-
 ;; dired
 (setq dired-dwim-target t)
 
@@ -85,9 +78,9 @@
   :ensure t
   :defer t
   )
+
 ;;emacs的默认compile命令是调用make -k，我把它改成了make。你也可以把它改成其他的，比如gcc之类的.
 (setq compile-command "make")
-
 
 ;;打开多个shell窗口
 (defun wcy-shell-mode-auto-rename-buffer (text)
@@ -165,7 +158,7 @@
         ("M-s f" . er/mark-defun)
         )
   )
-;;highlight-symbol 再按一次取消
+ ;;highlight-symbol 再按一次取消
 (global-set-key (kbd "M--") 'highlight-symbol-at-point)
 (global-set-key (kbd "M-n") 'highlight-symbol-next)
 (global-set-key (kbd "M-p") 'highlight-symbol-prev)
@@ -200,50 +193,49 @@
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
-
-
 ;;cua-mode
 (cua-selection-mode t)
-
 (setq visible-bell t)
 (setq default-fill-column 60)
 (setq frame-title-format "emacs@%b")
 (global-auto-revert-mode t)
 
 ;;ivy
-(use-package ivy
-  :disabled
-  :ensure t
-  :defer t
-  :config
-  (ivy-mode 1)
-  )
+;; (use-package ivy
+;;   :disabled
+;;   :ensure t
+;;   :defer t
+;;   :config
+;;   (ivy-mode 1)
+;;   )
 
 (use-package whitespace
   :ensure t
   :defer t
   :init
-  (autoload 'whitespace-mode   "whitespace" "Toggle whitespace visualization." t)
+  (autoload 'whitespace-mode   "whitespace" "Toggle whitespace visualization."        t)
   )
 
 (use-package iedit
   :ensure t
+  :defer t
   ;; :bind (
   ;;       ("C-;" . iedit-mode)
   ;;     )
   )
 
 
+
+
 (use-package graphviz-dot-mode
   :ensure t
+  :defer t
   )
 
 
 (use-package image-dired
   :ensure t
   )
-
-(desktop-save-mode 1)
 
 (provide 'config-edit)
 

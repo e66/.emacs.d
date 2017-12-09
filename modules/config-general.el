@@ -24,8 +24,6 @@
 (global-set-key (kbd "C-c w") 'whitespace-mode)
 (windmove-default-keybindings)
 
-
-
 (global-set-key (kbd "C-,") 'hide/show-comments-toggle)
 
 ;; 在有yes-or-no选项时，y代表yes，n代表n
@@ -74,9 +72,6 @@
   (add-hook 'org-mode-hook #'smartparens-mode)
   )
 
-;;UTF8
-(setq default-buffer-file-coding-system 'utf-8)
-(prefer-coding-system 'utf-8)
 
 ;;添加 go to char
 ;;通过这个，我们可以通过 C-t 加上指定字符向后跳，后者 C-u C-t 向前跳。比如C-t w w w w …就一直往后跳到后续的w处。
@@ -122,7 +117,7 @@
   :init
   (global-hl-line-mode t)
   )
-
+(column-number-mode t)
 ;;自动在文件末增加一新行
 (setq require-final-newline t)
 
