@@ -53,6 +53,16 @@
 
 (global-set-key (kbd"C-c q") 'format-code)
 
+;; add the qt
+(use-package qt-pro-mode
+  :ensure t
+  :defer t
+
+  :mode ("\\.pro\\'" "\\.pri\\'"))
+
+(autoload 'qml-mode "qml-mode" "Editing Qt Declarative." t)
+(add-to-list 'auto-mode-alist '("\\.qml$" . qml-mode))
+
 (provide 'config-c)
 
 
