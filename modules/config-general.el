@@ -13,7 +13,7 @@
 (global-set-key (kbd "C-8") 'switch-to-next-buffer)
 ;;bookmark
 (global-set-key (kbd "C--") 'bookmark-set)
-(global-set-key (kbd "C-+") 'bookmark-jump)
+(global-set-key (kbd "C-=") 'bookmark-jump)
 
 
 ;; 重新设置C-x s为保存所有的缓冲区
@@ -70,6 +70,8 @@
   (add-hook 'emacs-lisp-mode-hook #'smartparens-mode)
   (add-hook 'matlab-mode-hook #'smartparens-mode)
   (add-hook 'org-mode-hook #'smartparens-mode)
+  (add-hook 'python-mode-hook #'smartparens-mode)
+
   )
 
 
@@ -171,9 +173,9 @@
   :defer t
   :init
   (window-numbering-mode 1)
-  ;; (winner-mode 1)
-  ;; (global-set-key (kbd "C-x 4 u") 'winner-undo)
-  ;; (global-set-key (kbd "C-x 4 r") 'winner-redo)
+  (winner-mode 1)
+  (global-set-key (kbd "C-M-j") 'winner-undo)
+  (global-set-key (kbd " C-M-k") 'winner-redo)
   )
 
 (use-package highlight-indent-guides
@@ -187,6 +189,24 @@
   )
 
 
+(require 'vlf-setup)
+(custom-set-variables
+ '(vlf-application 'dont-ask))
+
+;; (defun my-find-file-check-make-large-file-read-only-hook ()
+;;   "If a file is over a given size, make the buffer read only."
+;;   (when (> (buffer-size) (* 1024 1024))
+;;     (setq buffer-read-only t)
+;;     (buffer-disable-undo)
+;;     (fundamental-mode)))
+
+;; (add-hook 'find-file-hook 'my-find-file-check-make-large-file-read-only-hook)
+
+
 (provide 'config-general)
+
+
+
+
 
 
