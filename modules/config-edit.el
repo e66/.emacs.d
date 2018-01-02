@@ -9,7 +9,6 @@
   (setq untabify-this-buffer (not (derived-mode-p 'makefile-mode)))
   (add-hook 'before-save-hook #'untabify-all))
 (add-hook 'prog-mode-hook 'untabify-mode)
-
 ;;agreesive
 (use-package aggressive-indent
   :ensure t
@@ -21,7 +20,6 @@
   (global-aggressive-indent-mode 1)
   (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
   )
-
 ;;定义快捷键C-c C-/为注释和取消注释快捷键
 (global-set-key [?\C-c ?\C-/] 'comment-or-uncomment-region)
 ;; ;如果选中多行则注释/反注释选中行，如果什么都没有选中，则针对当前光标所在行进行操作
@@ -33,7 +31,6 @@
   (comment-or-uncomment-region beg end arg)
   )
 (global-set-key [remap comment-or-uncomment-region] 'my-comment-or-uncomment-region)
-
 ;;添加Yasnippet
 (use-package yasnippet
   :defer t
@@ -187,6 +184,18 @@
   )
 ;; (define-key global-map (kbd "C-c -") 'ace-jump-mode)
 
+
+
+(use-package window-numbering
+  :ensure t
+  :defer t
+  :init
+  (window-numbering-mode 1)
+  (winner-mode 1)
+  (global-set-key (kbd "C-M-j") 'winner-undo)
+  (global-set-key (kbd " C-M-k") 'winner-redo)
+  )
+
 ;;multiple-cursors-mode
 (global-set-key (kbd "C-c m c")'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
@@ -197,7 +206,82 @@
 (cua-selection-mode t)
 (setq visible-bell t)
 (setq default-fill-column 60)
-(setq frame-title-format "emacs@%b")
+(setq frame-title-format
+      '(buffer-file-name "%f"
+                         (dired-directory dired-directory "%b")))
+
+(defun spaceline--unicode-number (str)
+  "Return a nice unicode representation of a single-digit number STR."
+  (cond
+   ((string= "1" str) "➊")
+   ((string= "2" str) "➋")
+   ((string= "3" str) "➌")
+   ((string= "4" str) "➍")
+   ((string= "5" str) "➎")
+   ((string= "6" str) "➏")
+   ((string= "7" str) "➐")
+   ((string= "8" str) "➑")
+   ((string= "9" str) "➒")
+   ((string= "0" str) "➓")))
+
+(defun window-number-mode-line ()
+  "The current window number. Requires `window-numbering-mode' to be enabled."
+  (when (bound-and-true-p window-numbering-mode)
+    (let* ((num (window-numbering-get-number))
+           (str (when num (int-to-string num))))
+      (spaceline--unicode-number str))))
+
+(setq-default mode-line-format
+              (list
+               "%1"
+               '(:eval (propertize
+                        (window-number-mode-line)
+                        'face
+                        'font-lock-type-face))
+               '(:propertize " %l " face (:weight bold))               
+               "%1"
+               ;; the buffer name; the file name as a tool tip
+               '(:eval (propertize "%b " 'face 'font-lock-keyword-face
+                                   'help-echo (buffer-file-name)))
+               ;; relative position, size of file
+               "["
+               (propertize "%p" 'face 'font-lock-constant-face) ;; % above top
+               "/"
+               (propertize "%I" 'face 'font-lock-constant-face) ;; size
+               "] "
+
+               " [" ;; insert vs overwrite mode, input-method in a tooltip
+               '(:eval (propertize (if overwrite-mode "Ovr" "Ins")
+                                   'face 'font-lock-preprocessor-face
+                                   'help-echo (concat "Buffer is in "
+                                                      (if overwrite-mode
+                                                          "overwrite"
+                                                        "insert") " mode")))
+
+               '(:eval (when (buffer-modified-p)
+                         (concat ","  (propertize "Mod"
+                                                  'face 'font-lock-warning-face
+                                                  'help-echo "Buffer has been modified"))))
+               
+               ;; is this buffer read-only?
+               '(:eval (when buffer-read-only
+                         (concat ","  (propertize "RO"
+                                                  'face 'font-lock-type-face
+                                                  'help-echo "Buffer is read-only"))))
+               "] "
+               ;; git
+               '(:propertize vc-mode)
+               
+               '(:eval (propertize "%m" 'face 'font-lock-string-face
+                                   'help-echo buffer-file-coding-system))
+               
+               ;; string
+               "  ("
+               '(:propertize "coder: 张银东")
+               ")"
+               
+               ))
+
 (global-auto-revert-mode t)
 
 ;;ivy

@@ -14,37 +14,26 @@
 ;;bookmark
 (global-set-key (kbd "C--") 'bookmark-set)
 (global-set-key (kbd "C-=") 'bookmark-jump)
-
-
 ;; 重新设置C-x s为保存所有的缓冲区
 (defun save-all () (interactive) (save-some-buffers t))
 (global-set-key (kbd "C-x s") 'save-all)
-
 ;; activate whitespace-mode to view all whitespace characters
 (global-set-key (kbd "C-c w") 'whitespace-mode)
 (windmove-default-keybindings)
-
 (global-set-key (kbd "C-,") 'hide/show-comments-toggle)
-
 ;; 在有yes-or-no选项时，y代表yes，n代表n
 (fset 'yes-or-no-p 'y-or-n-p)
-
-
 ;; 结尾换行自动插入新行
 (setq next-line-add-newlines t)
-
 ;; 高亮括号匹配
 (setq show-paren-style 'parenthesis)
-
 ;; 设置为80列
 (setq-default fill-column 80)
 (add-to-list 'default-frame-alist '(height . 28))
 (add-to-list 'default-frame-alist '(width . 100))
-
 ;;关闭启动画面、菜单、工具条
 (setq inhibit-startup-message t)
 (setq gnus-inhibit-startup-message t)
-
 
 (defun emacs-maximize ()    
   "Maximize emacs window in windows os"    
@@ -106,10 +95,9 @@
 
 ;;设置光标不闪
 (blink-cursor-mode 0)
-
+;; (global-linum-mode t)
 ;;显示时间
 ;; (display-time-mode t)
-
 ;;显示buffer-size
 (size-indication-mode t)
 ;;高亮当前行
@@ -119,6 +107,7 @@
   :init
   (global-hl-line-mode t)
   )
+
 (column-number-mode t)
 ;;自动在文件末增加一新行
 (setq require-final-newline t)
@@ -130,15 +119,12 @@
 (add-hook 'verilog-mode-hook 'hs-minor-mode)
 (add-hook 'vhdl-mode-hook 'hs-minor-mode)
 ;;在模式栏中显示当前光标所在的函数
-(which-function-mode)
-
+;; (which-function-mode)
 ;;实现鼠标选中后直接用新内容替换掉
 (delete-selection-mode t)
-
 ;;代码折叠展开翻转
 (global-set-key (kbd"C-0") 'hs-toggle-hiding)
 (global-set-key (kbd"C-'") 'hs-hide-all)
-
 (use-package sr-speedbar
   :ensure t
   :defer t
@@ -148,7 +134,6 @@
   :config
   (setq speedbar-use-images nil)
   )
-
 ;; (use-package auto-save
 ;;   :defer t
 ;;   :load-path "~/.emacs.d/elpa/customize"
@@ -156,8 +141,6 @@
 ;;   (auto-save-enable 1)
 ;;   (setq auto-save-slient t)
 ;;  )
-
-
 (add-to-list 'load-path "~/.emacs.d/elpa/goto-chg-20131228.659")
 (require 'goto-chg)
 (global-set-key (kbd"C-c w") 'goto-last-change)
@@ -168,16 +151,6 @@
 (auto-save-enable)
 (setq auto-ave-slient t)
 
-(use-package window-numbering
-  :ensure t
-  :defer t
-  :init
-  (window-numbering-mode 1)
-  (winner-mode 1)
-  (global-set-key (kbd "C-M-j") 'winner-undo)
-  (global-set-key (kbd " C-M-k") 'winner-redo)
-  )
-
 (use-package highlight-indent-guides
   :ensure t
   :defer t
@@ -187,7 +160,6 @@
   (setq highlight-indent-guides-character ?\|)
   ;; (setq highlight-indent-guides-character ':)
   )
-
 
 (require 'vlf-setup)
 (custom-set-variables
@@ -201,7 +173,6 @@
 ;;     (fundamental-mode)))
 
 ;; (add-hook 'find-file-hook 'my-find-file-check-make-large-file-read-only-hook)
-
 
 (provide 'config-general)
 
