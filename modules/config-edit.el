@@ -277,7 +277,7 @@
                
                ;; string
                "  ("
-               '(:propertize "coder: 张银东")
+               '(:propertize "Acmen: 张银东")
                ")"
                
                ))
