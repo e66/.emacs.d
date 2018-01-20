@@ -1,9 +1,11 @@
 ;; emacs 配置 for myself and windows
 ;;设置环境变量
-(setenv"HOME" "D:/program files/emacs")
-(setenv"ARTISTIC_STYLE_OPTIONS" "D:/program files/emacs/bin/AStyle/astylerc.opt")
-(setenv"PATH" "D:/program files/emacs/bin;D:/program files/emacs/UnxUtils/usr/local/wbin;D:/program files/Git/bin;D:/program files/Git/usr/bin;D:/program files/emacs/bin/Gnu_global/bin;D:/program files/LLVM/bin;D:/program files/emacs/bin/graphviz/bin;D:/program files/emacs/bin/AStyle/bin;D:/Program Files/python;D:/Program Files/python/Scripts")
-(setq default-directory "~/")
+(cond((equal system-type 'windows-nt)
+      (setenv"HOME" "D:/program files/emacs")
+      (setenv"ARTISTIC_STYLE_OPTIONS" "D:/program files/emacs/bin/AStyle/astylerc.opt")
+      (setenv"PATH" "D:/program files/emacs/bin;D:/program files/emacs/UnxUtils/usr/local/wbin;D:/program files/Git/bin;D:/program files/Git/usr/bin;D:/program files/emacs/bin/Gnu_global/bin;D:/program files/LLVM/bin;D:/program files/emacs/bin/graphviz/bin;D:/program files/emacs/bin/AStyle/bin;D:/Program Files/python;D:/Program Files/python/Scripts;c:/Windows/System32")
+      (setq default-directory "~/")
+      ))
 
 ;;添加最新的源
 (require 'package)

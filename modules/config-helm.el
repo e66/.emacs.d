@@ -1,5 +1,9 @@
 (use-package projectile
   :ensure t
+  :bind (
+         ("M-s" . projectile-ripgrep)
+         )
+
   :defer t
   :init
   (projectile-global-mode)
@@ -124,6 +128,7 @@
     (use-package helm-projectile
       :defer t
       :init
+      (setq helm-projectile-fuzzy-match t)
       (helm-projectile-on)
       )))
 
@@ -199,13 +204,17 @@
   ;; If nil, you can slightly boost invoke speed in exchange for text color
   (setq helm-swoop-speed-or-color t))
 
-(use-package helm-ag
-  :ensure t
-  :defer t
-  :bind(
-        ("C-x a" . helm-do-ag)
+;; windows-nt or gnu/linux
+(cond((equal system-type 'gnu/linux)
+      (use-package helm-ag
+        :ensure t
+        :defer t
+        :bind(
+              ("C-x a" . helm-do-ag)
+              )
         )
-  )
+      ))
+
 (provide 'config-helm)
 
 

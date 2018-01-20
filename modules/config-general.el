@@ -119,7 +119,7 @@
 (add-hook 'verilog-mode-hook 'hs-minor-mode)
 (add-hook 'vhdl-mode-hook 'hs-minor-mode)
 ;;在模式栏中显示当前光标所在的函数
-;; (which-function-mode)
+(which-function-mode)
 ;;实现鼠标选中后直接用新内容替换掉
 (delete-selection-mode t)
 ;;代码折叠展开翻转

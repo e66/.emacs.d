@@ -210,6 +210,8 @@
       '(buffer-file-name "%f"
                          (dired-directory dired-directory "%b")))
 
+
+(which-func-mode)
 (defun spaceline--unicode-number (str)
   "Return a nice unicode representation of a single-digit number STR."
   (cond
@@ -271,13 +273,16 @@
                "] "
                ;; git
                '(:propertize vc-mode)
-               
-               '(:eval (propertize "%m" 'face 'font-lock-string-face
-                                   'help-echo buffer-file-coding-system))
+
+               "  "
+               '(:eval (propertize
+                        (which-function)
+                        'face
+                        'font-lock-type-face))
                
                ;; string
                "  ("
-               '(:propertize "Acmen: 张银东")
+               '(:propertize "EE: 张银东")
                ")"
                
                ))
