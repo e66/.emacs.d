@@ -44,19 +44,19 @@
 
 ;; (load 'auctex.el' nil t t)
 ;; (load 'preview-latex.el' nil t t)
-
-(cond((equal system-type 'gnu/linux)
+;;
+(cond((equal system-type 'freebsd)
       (add-to-list 'load-path "~/.emacs.d/elpa/auctex")
 
-(setq TeX-auto-save t)
-(setq TeX-parse-self t)
-(setq-default TeX-master nil)
-(setq preview-scale-function 1.3)
-(setq LaTeX-math-menu-unicode t)
-(setq TeX-insert-braces nil)
-(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
-(require 'tex-mik)
-))
+      (setq TeX-auto-save t)
+      (setq TeX-parse-self t)
+      (setq-default TeX-master nil)
+      (setq preview-scale-function 1.3)
+      (setq LaTeX-math-menu-unicode t)
+      (setq TeX-insert-braces nil)
+      (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+      (require 'tex-mik)
+      ))
 
 
 
