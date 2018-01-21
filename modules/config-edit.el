@@ -43,6 +43,7 @@
 
 ;; dired
 (setq dired-dwim-target t)
+(define-key dired-mode-map (kbd "j") 'dired-up-directory) 
 
 (defun xah-dired-mode-setup ()
   "to be run as hook for `dired-mode'."
