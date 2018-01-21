@@ -4,8 +4,10 @@
   (load-theme 'zenburn t)
   )
 
-;;set font family
-(set-default-font "-outline-consolas-normal-r-normal-normal-18-97-96-96-c-*-iso8859-1")  ;;此处的18对应font四号
+(cond((equal system-type 'windows-nt)
+      ;;set font family
+      (set-default-font "-outline-consolas-normal-r-normal-normal-18-97-96-96-c-*-iso8859-1")  ;;此处的18对应font四号
+      ))
 
 
 ;;cnfonts

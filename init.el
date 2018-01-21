@@ -44,7 +44,9 @@
 
 ;; (load 'auctex.el' nil t t)
 ;; (load 'preview-latex.el' nil t t)
-(add-to-list 'load-path "~/.emacs.d/elpa/auctex")
+
+(cond((equal system-type 'gnu/linux)
+      (add-to-list 'load-path "~/.emacs.d/elpa/auctex")
 
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
@@ -54,6 +56,7 @@
 (setq TeX-insert-braces nil)
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 (require 'tex-mik)
+))
 
 
 

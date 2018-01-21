@@ -6,11 +6,12 @@
 (setq org-mobile-inbox-for-pull "~/agenda/inbox.org")
 (setq org-default-notes-file (concat org-directory "notes.org"))
 ;; 自己的pc
-(defcustom org-mobile-checksum-binary (or (executable-find "~/bin/GnuWin32/bin/md5sum.exe"))
-  "Executable used for computing checksums of agenda files."
-  :group 'org-mobile
-  :type 'string)
-
+(cond((equal system-type 'windows-nt)
+      (defcustom org-mobile-checksum-binary (or (executable-find "~/bin/GnuWin32/bin/md5sum.exe"))
+        "Executable used for computing checksums of agenda files."
+        :group 'org-mobile
+        :type 'string)
+      ))
 
 ;; (defun my-org-mode-config ()
 ;;   "For use in `org-mode-hook'."

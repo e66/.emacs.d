@@ -160,10 +160,9 @@
   (setq highlight-indent-guides-character ?\|)
   ;; (setq highlight-indent-guides-character ':)
   )
-
-(require 'vlf-setup)
-(custom-set-variables
- '(vlf-application 'dont-ask))
+;; (require 'vlf-setup)
+;; (custom-set-variables
+;; '(vlf-application 'dont-ask))
 
 ;; (defun my-find-file-check-make-large-file-read-only-hook ()
 ;;   "If a file is over a given size, make the buffer read only."
