@@ -43,7 +43,6 @@
 
 ;; dired
 (setq dired-dwim-target t)
-(define-key dired-mode-map (kbd "j") 'dired-up-directory) 
 
 (defun xah-dired-mode-setup ()
   "to be run as hook for `dired-mode'."
@@ -70,6 +69,7 @@
   (define-key dired-mode-map (kbd "W") 'dired-ranger-move) 
   (define-key dired-mode-map (kbd "Z") 'dired-ranger-paste) 
   )
+(define-key dired-mode-map (kbd "j") 'dired-up-directory) 
 
 ;;multi-term
 (use-package multi-term
