@@ -35,17 +35,19 @@
 (setq inhibit-startup-message t)
 (setq gnus-inhibit-startup-message t)
 
-(defun emacs-maximize ()    
-  "Maximize emacs window in windows os"    
-  (interactive)    
-  (w32-send-sys-command 61488))        ; WM_SYSCOMMAND #xf030 maximize
+(cond((equal system-type 'windows-nt)
+      (defun emacs-maximize ()    
+        "Maximize emacs window in windows os"    
+        (interactive)    
+        (w32-send-sys-command 61488))        ; WM_SYSCOMMAND #xf030 maximize
 
-(defun emacs-normal ()    
-  "Normal emacs window in windows os"    
-  (interactive)    
-  (w32-send-sys-command #xf120))    ; #xf120 normalimize    
+      (defun emacs-normal ()    
+        "Normal emacs window in windows os"    
+        (interactive)    
+        (w32-send-sys-command #xf120))    ; #xf120 normalimize    
 
-(global-set-key (kbd  "C-9") 'emacs-maximize)  
+      (global-set-key (kbd  "C-9") 'emacs-maximize)
+      ))
 ;; (global-set-key (kbd  "C-\") 'emacs-maximize)  
 
 (use-package smartparens 
